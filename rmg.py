@@ -1,9 +1,13 @@
-import requests, lxml.html, html2text, fileinput
+import requests, lxml.html, html2text, fileinput, sys, os
+
+# ignore warnings
+import warnings
+warnings.filterwarnings("ignore")
 
 OUTPUT_FILE_NAME = 'README.md_generated'
 
 login_url = 'https://intranet.hbtn.io/auth/sign_in'
-request_url = 'https://intranet.hbtn.io/projects/208'
+request_url = sys.argv[1]
 
 s = requests.session()          # start new session
 login = s.get(login_url)        # get html
@@ -11,8 +15,8 @@ login_html = lxml.html.fromstring(login.text) # reformat url into list
 hidden_inputs = login_html.xpath(r'//form//input[@type="hidden"]') # get all necessary hidden inputs
 form = {x.attrib["name"]: x.attrib["value"] for x in hidden_inputs} # put them into dictionary
 
-form['user[login]'] = '320' # username
-form['user[password]'] = 'ar7AnbJn9sH#' #password
+form['user[login]'] = os.environ['HOLB_USERNAME'] # username (make sure env variable is set)
+form['user[password]'] = os.environ['HOLB_PASS']  # password (make sure env variable is set)
 response = s.post(login_url, data=form) #login to holberton intranet
 
 page = s.get(request_url)       # now that we're logged in, get the url we really want
@@ -43,5 +47,9 @@ readme = open(OUTPUT_FILE_NAME, 'w')
 text_maker = html2text.HTML2Text()
 readme.write(text_maker.handle(readme_html).encode('utf-8'))
 readme.close()
+
+# remove tmp files
+os.remove('README.html')
+os.remove('README.html_')
 
 # output file called OUTPUT_FILE_NAME
