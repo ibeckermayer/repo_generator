@@ -1,7 +1,6 @@
-import requests
-import lxml.html
-import html2text
-import fileinput
+import requests, lxml.html, html2text, fileinput
+
+OUTPUT_FILE_NAME = 'README.md_generated'
 
 login_url = 'https://intranet.hbtn.io/auth/sign_in'
 request_url = 'https://intranet.hbtn.io/projects/208'
@@ -14,40 +13,35 @@ form = {x.attrib["name"]: x.attrib["value"] for x in hidden_inputs} # put them i
 
 form['user[login]'] = '320' # username
 form['user[password]'] = 'ar7AnbJn9sH#' #password
-response = s.post(login_url, data=form)
+response = s.post(login_url, data=form) #login to holberton intranet
 
-page = s.get(request_url)       # get the url we really want
+page = s.get(request_url)       # now that we're logged in, get the url we really want
 page_html = lxml.html.fromstring(page.text) # turn it into lxml html
 
-# headers = page_html.xpath(r'//div[@class=" clearfix gap"]/h4[@class="task"]') # get all the header names
-# for elem in headers:
-#     print("######")
-#     print(lxml.html.tostring(elem, pretty_print=True))
-# headers = [x.strip(' \t\n\r') for x in headers] # remove spaces and extra lines
-# headers = filter(None, headers) # filter out blank entries    
+# get all the relevant values from the descriptions
+desc =  page_html.xpath(r'//div[@class=" clearfix gap"]/h4[@class="task"]|//div[@class=" clearfix gap"]/p|//div[@class=" clearfix gap"]/pre|//div[@class=" clearfix gap"]/ul') 
 
-desc =  page_html.xpath(r'//div[@class=" clearfix gap"]/h4[@class="task"]|//div[@class=" clearfix gap"]/p|//div[@class=" clearfix gap"]/pre|//div[@class=" clearfix gap"]/ul') # get all the relevant values from the descriptions
-
-readme_html_ = open('README.html_', 'w')
-from lxml.html.clean import Cleaner
-cleaner = Cleaner(kill_tags=['span']) # kills <span> mandatory </span>
+readme_html_ = open('README.html_', 'w') # create temporary html file
+from lxml.html.clean import Cleaner 
+cleaner = Cleaner(kill_tags=['span']) 
 for elem in desc:
-    elem = cleaner.clean_html(elem)
-    readme_html_.write(lxml.html.tostring(elem, pretty_print=True))
+    elem = cleaner.clean_html(elem) # kills <span> mandatory </span> or <span> advanced <span>
+    readme_html_.write(lxml.html.tostring(elem, pretty_print=True)) # write to file
 readme_html_.close()
 
-# replace h4 with h2
+# replace h4 with h2 (this looks nicer)
 readme_html_ = open('README.html_')
-readme_html = open('README.html', 'w')
+readme_html = open('README.html', 'w') # final html file
 for s in readme_html_.xreadlines():
     readme_html.write(s.replace('h4','h2'))
 readme_html_.close()
 readme_html.close()
 
+# convert html to markdown
 readme_html = open('README.html', 'r').read()
-readme = open('README.md_g', 'w')
+readme = open(OUTPUT_FILE_NAME, 'w')
 text_maker = html2text.HTML2Text()
-# text_maker.mark_code = True
-
 readme.write(text_maker.handle(readme_html).encode('utf-8'))
 readme.close()
+
+# output file called OUTPUT_FILE_NAME
