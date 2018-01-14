@@ -3,15 +3,14 @@
 Write a script that prints "Hello, World", followed by a new line to the
 standard output.
 
-[code]
-
+    
+    
     julien@ubuntu:/tmp/h$ ./0-hello_world 
     Hello, World
     julien@ubuntu:/tmp/h$ ./0-hello_world | cat -e
     Hello, World$
     julien@ubuntu:/tmp/h$ 
     
-[/code]
 
 **Repo:**
 
@@ -23,13 +22,12 @@ standard output.
 
 Write a script that displays a confused smiley `"(Ôo)'`.
 
-[code]
-
+    
+    
     julien@ubuntu:/tmp/h$ ./1-confused_smiley 
     "(Ôo)'
     julien@ubuntu:/tmp/h$ 
     
-[/code]
 
 **Repo:**
 
@@ -43,8 +41,8 @@ Display the content of the `/etc/passwd` file.
 
 Example:
 
-[code]
-
+    
+    
     $ ./2-hellofile
     ##
     # User Database
@@ -71,7 +69,6 @@ Example:
     _krbfast:*:246:-2:Kerberos FAST Account:/var/empty:/usr/bin/false
     $
     
-[/code]
 
 **Repo:**
 
@@ -85,8 +82,8 @@ Display the content of `/etc/passwd` and `/etc/hosts`
 
 Example:
 
-[code]
-
+    
+    
     $ ./3-twofiles
     ##
     # User Database
@@ -112,7 +109,6 @@ Example:
     ::1 localhost
     $
     
-[/code]
 
 **Repo:**
 
@@ -126,8 +122,8 @@ Display the last 10 lines of `/etc/passwd`
 
 Example:
 
-[code]
-
+    
+    
     $ ./4-lastlines
     _assetcache:*:235:235:Asset Cache Service:/var/empty:/usr/bin/false
     _coremediaiod:*:236:236:Core Media IO Daemon:/var/empty:/usr/bin/false
@@ -141,7 +137,6 @@ Example:
     _krbfast:*:246:-2:Kerberos FAST Account:/var/empty:/usr/bin/false
     
     
-[/code]
 
 Tips from [Dora Korpar](/rltoken/SRaDNb4FY-ydNI6qHhtrUg "Dora Korpar"):
 "Thinks of it as a cat, what is at the end of it?"
@@ -158,8 +153,8 @@ Display the first 10 lines of `/etc/passwd`
 
 Example:
 
-[code]
-
+    
+    
     $ ./5-firstlines
     ##
     # User Database
@@ -173,7 +168,6 @@ Example:
     ##
     $
     
-[/code]
 
 **Repo:**
 
@@ -189,8 +183,8 @@ The file `iacta` will be in the working directory
 
   * You're not allowed to use `sed`
 
-[code]
-
+    
+    
     julien@ubuntu:/tmp/h$ cat iacta 
     Alea iacta est
     
@@ -210,7 +204,6 @@ The file `iacta` will be in the working directory
     Alea iacta est ("The die is cast") is a Latin phrase attributed by Suetonius
     julien@ubuntu:/tmp/h$ 
     
-[/code]
 
 Note: The output will differ, depending on the content of the file `iacta`.
 
@@ -226,8 +219,8 @@ Write a script that writes into the file `ls_cwd_content` the result of the
 command `ls -la`. If the file `ls_cwd_content` already exists, it should be
 overwritten. If the file `ls_cwd_content` does not exist, create it.
 
-[code]
-
+    
+    
     julien@ubuntu:/tmp/h$ ls -la
     total 20
     drwxrwxr-x  2 julien julien 4096 Sep 20 18:18 .
@@ -254,7 +247,6 @@ overwritten. If the file `ls_cwd_content` does not exist, create it.
     -rw-rw-r--  1 julien julien    0 Sep 20 18:18 ls_cwd_content
     julien@ubuntu:/tmp/h$ 
     
-[/code]
 
 **Repo:**
 
@@ -268,8 +260,8 @@ Write a shell script that creates a file named exactly `\*\\'"Holberton
 School"\'\\*$\?\*\*\*\*\*:)` containing the text `Holberton School` ending by
 a new line.
 
-[code]
-
+    
+    
     julien@production-503e7013:~/shell$ ls && ./7-file && ls -l && cat -e \\*
     0-mac_and_cheese 7-file 7-file~ Makefile
     total 20
@@ -281,7 +273,6 @@ a new line.
     Holberton School$
     julien@production-503e7013:~/shell$
     
-[/code]
 
 **Repo:**
 
@@ -295,8 +286,8 @@ Write a script that duplicates the last line of the file `iacta`
 
   * The file `iacta` will be in the working directory
 
-[code]
-
+    
+    
     julien@ubuntu:/tmp/h$ cat iacta 
     Alea iacta est
     
@@ -331,7 +322,6 @@ Write a script that duplicates the last line of the file `iacta`
     Read more: https://en.wikipedia.org/wiki/Alea_iacta_est
     julien@ubuntu:/tmp/h$ 
     
-[/code]
 
 **Repo:**
 
@@ -345,8 +335,8 @@ Write a script that deletes all the regular files (not the directories) with a
 `.js` extension that are present in the current directory and all its
 subfolders.
 
-[code]
-
+    
+    
     julien@ubuntu:/tmp/h$ ls -lR
     .:
     total 24
@@ -382,7 +372,6 @@ subfolders.
     total 0
     julien@ubuntu:/tmp/h$ 
     
-[/code]
 
 **Repo:**
 
@@ -400,8 +389,8 @@ the current directory.
 
   * Hidden directories should be counted  
 
-[code]
-
+    
+    
     julien@production-503e7013:~/shell/fun_with_the_shell$ ls -lRa
     .:
     total 32
@@ -442,7 +431,6 @@ the current directory.
     3
     julien@production-503e7013:~/shell/fun_with_the_shell$
     
-[/code]
 
 **Repo:**
 
@@ -459,8 +447,8 @@ Requirements:
   * One file per line
   * Sorted from the newest to the oldest
 
-[code]
-
+    
+    
     alex@ubuntu:/tmp$ ls -l
     total 7
     -rwxr-xr-x 1 501 dialout  32 Sep 27 23:51 0-hello_world
@@ -490,7 +478,6 @@ Requirements:
     3-twofiles
     alex@ubuntu:/tmp$
     
-[/code]
 
 **Repo:**
 
@@ -507,8 +494,8 @@ that appear exactly once.
   * Output format: One line, one word
   * Words should be sorted
 
-[code]
-
+    
+    
     julien@ubuntu:/tmp/0x02$ cat list 
     C#
     C
@@ -542,7 +529,6 @@ that appear exactly once.
     Go
     julien@ubuntu:/tmp/0x02$ 
     
-[/code]
 
 **Repo:**
 
@@ -554,15 +540,14 @@ that appear exactly once.
 
 Display lines containing the pattern "root" from the file `/etc/passwd`
 
-[code]
-
+    
+    
     $ ./14-findthatword
     root:*:0:0:System Administrator:/var/root:/bin/sh
     daemon:*:1:1:System Services:/var/root:/usr/bin/false
     _cvmsroot:*:212:212:CVMS Root:/var/empty:/usr/bin/false
     $
     
-[/code]
 
 **Repo:**
 
@@ -575,13 +560,12 @@ Display lines containing the pattern "root" from the file `/etc/passwd`
 Display the number of lines that contain the pattern "bin" in the file
 `/etc/passwd`
 
-[code]
-
+    
+    
     $ ./15-countthatword
     81
     $ 
     
-[/code]
 
 **Repo:**
 
@@ -594,8 +578,8 @@ Display the number of lines that contain the pattern "bin" in the file
 Display lines containing the pattern "root" and 3 lines after them in the file
 `/etc/passwd`.
 
-[code]
-
+    
+    
     $ ./16-whatsnext
     root:*:0:0:System Administrator:/var/root:/bin/sh
     daemon:*:1:1:System Services:/var/root:/usr/bin/false
@@ -609,7 +593,6 @@ Display lines containing the pattern "root" and 3 lines after them in the file
     _dpaudio:*:215:215:DP Audio:/var/empty:/usr/bin/false
     $
     
-[/code]
 
 **Repo:**
 
@@ -622,8 +605,8 @@ Display lines containing the pattern "root" and 3 lines after them in the file
 Display all the lines in the file `/etc/passwd` that do not contain the
 pattern "bin".
 
-[code]
-
+    
+    
     $ ./17-hidethisword
     ##
     # User Database
@@ -637,7 +620,6 @@ pattern "bin".
     ##
     $
     
-[/code]
 
 **Repo:**
 
@@ -651,8 +633,8 @@ Display all lines of the file `/etc/ssh/sshd_config` starting with a letter.
 
   * include capital letters as well
 
-[code]
-
+    
+    
     $ ./18-letteronly
     SyslogFacility AUTHPRIV
     AuthorizedKeysFile  .ssh/authorized_keys
@@ -661,7 +643,6 @@ Display all lines of the file `/etc/ssh/sshd_config` starting with a letter.
     Subsystem   sftp    /usr/libexec/sftp-server
     $
     
-[/code]
 
 **Repo:**
 
@@ -673,13 +654,12 @@ Display all lines of the file `/etc/ssh/sshd_config` starting with a letter.
 
 Replace all characters `A` and `c` from input to `Z` and `e` respectively.
 
-[code]
-
+    
+    
     julien@ubuntu:/tmp/0x02$ echo 'Replace all characters `A` and `c` from input to `Z` and `e`.' | ./19-AZ 
     Replaee all eharaeters `Z` and `e` from input to `Z` and `e`.
     julien@ubuntu:/tmp/0x02$ 
     
-[/code]
 
 **Repo:**
 
@@ -691,13 +671,12 @@ Replace all characters `A` and `c` from input to `Z` and `e` respectively.
 
 Create a script that removes all letters `c` and `C` from input.
 
-[code]
-
+    
+    
     julien@ubuntu:/tmp/0x02$ echo Chicago | ./20-hiago 
     hiago
     julien@ubuntu:/tmp/0x02$ 
     
-[/code]
 
 **Repo:**
 
@@ -709,13 +688,12 @@ Create a script that removes all letters `c` and `C` from input.
 
 Write a script that reverse its input.
 
-[code]
-
+    
+    
     julien@ubuntu:/tmp/0x02$ echo "Reverse" | ./21-reverse 
     esreveR
     julien@ubuntu:/tmp/0x02$ 
     
-[/code]
 
 **Repo:**
 
@@ -730,8 +708,8 @@ users.
 
   * Based on the the `/etc/passwd` file
 
-[code]
-
+    
+    
     julien@ubuntu:/tmp/0x02$ cat /etc/passwd
     root:x:0:0:root:/root:/bin/bash
     daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
@@ -821,7 +799,6 @@ users.
     www-data:/var/www
     julien@ubuntu:/tmp/0x02$ 
     
-[/code]
 
 **Repo:**
 
@@ -842,8 +819,8 @@ directory and all sub-directories.
   * The listing should end with a new line
   * You are not allowed to use `basename`, `grep`, `egrep`, `fgrep` or `rgrep`
 
-[code]
-
+    
+    
     ubuntu@ip-172-31-63-244:~/holbertonschool$ ls -laR
     .:
     total 64
@@ -918,7 +895,6 @@ directory and all sub-directories.
     ........gif
     ubuntu@ip-172-31-63-244:~/holbertonschool$
     
-[/code]
 
 **Repo:**
 
@@ -939,8 +915,8 @@ directory and all its sub-directories.
   * The listing should end with a new line
   * You are not allowed to use `basename`, `grep`, `egrep`, `fgrep` or `rgrep`
 
-[code]
-
+    
+    
         julien@production-503e7013:~/shell/fun_with_the_shell$ ls -Rla
         .:
         total 28
@@ -984,7 +960,6 @@ directory and all its sub-directories.
         main
         julien@production-503e7013:~/shell/fun_with_the_shell$
     
-[/code]
 
 **Repo:**
 
@@ -1006,8 +981,8 @@ Create a script that decodes acrostics that use the first letter of each line.
   * The 'decoded' message has to end with a new line
   * You are not allowed to use `grep`, `egrep`, `fgrep` or `rgrep`
 
-[code]
-
+    
+    
     julien@ubuntu:/tmp/0x02$ cat An\ Acrostic 
     Elizabeth it is in vain you say
     Love not"--thou sayest it in so sweet a way:
@@ -1022,7 +997,6 @@ Create a script that decodes acrostics that use the first letter of each line.
     ELIZABETH
     julien@ubuntu:/tmp/0x02$ 
     
-[/code]
 
 **Repo:**
 
@@ -1040,8 +1014,8 @@ displays the 11 hosts or IP addresses which did the most requests.
 
 Format:
 
-[code]
-
+    
+    
     host    When possible, the hostname making the request. Uses the IP address if the hostname was unavailable.
     logname Unused, always -
     time    In seconds, since 1970
@@ -1050,12 +1024,11 @@ Format:
     response    HTTP response code
     bytes   Number of bytes in the reply
     
-[/code]
 
 Here is an example with one day of logs of the NASA website (1995).
 
-[code]
-
+    
+    
     julien@ubuntu:/tmp/0x02$ wget http://indeedeng.github.io/imhotep/files/nasa_19950801.tsv
     --2016-09-21 10:05:09--  http://indeedeng.github.io/imhotep/files/nasa_19950801.tsv
     Resolving indeedeng.github.io (indeedeng.github.io)... 151.101.52.133
@@ -1098,7 +1071,6 @@ Here is an example with one day of logs of the NASA website (1995).
     131.110.62.74
     julien@ubuntu:/tmp/0x02$ 
     
-[/code]
 
 **Repo:**
 

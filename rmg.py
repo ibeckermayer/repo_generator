@@ -34,7 +34,7 @@ readme_html.close()
 readme_html = open('README.html', 'r').read()
 readme = open('README.md_g', 'w')
 text_maker = html2text.HTML2Text()
-text_maker.mark_code = True
+# text_maker.mark_code = True
 
 readme.write(text_maker.handle(readme_html).encode('utf-8'))
 readme.close()
