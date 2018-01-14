@@ -1,6 +1,7 @@
 import requests
 import lxml.html
 import html2text
+import fileinput
 
 login_url = 'https://intranet.hbtn.io/auth/sign_in'
 request_url = 'https://intranet.hbtn.io/projects/208'
@@ -26,9 +27,21 @@ page_html = lxml.html.fromstring(page.text) # turn it into lxml html
 # headers = filter(None, headers) # filter out blank entries    
 
 desc =  page_html.xpath(r'//div[@class=" clearfix gap"]/h4[@class="task"]|//div[@class=" clearfix gap"]/p|//div[@class=" clearfix gap"]/pre|//div[@class=" clearfix gap"]/ul') # get all the relevant values from the descriptions
-readme_html = open('README.html', 'w')
+
+readme_html_ = open('README.html_', 'w')
+from lxml.html.clean import Cleaner
+cleaner = Cleaner(kill_tags=['span']) # kills <span> mandatory </span>
 for elem in desc:
-    readme_html.write(lxml.html.tostring(elem, pretty_print=True))
+    elem = cleaner.clean_html(elem)
+    readme_html_.write(lxml.html.tostring(elem, pretty_print=True))
+readme_html_.close()
+
+# replace h4 with h2
+readme_html_ = open('README.html_')
+readme_html = open('README.html', 'w')
+for s in readme_html_.xreadlines():
+    readme_html.write(s.replace('h4','h2'))
+readme_html_.close()
 readme_html.close()
 
 readme_html = open('README.html', 'r').read()
@@ -38,4 +51,3 @@ text_maker = html2text.HTML2Text()
 
 readme.write(text_maker.handle(readme_html).encode('utf-8'))
 readme.close()
-# print desc

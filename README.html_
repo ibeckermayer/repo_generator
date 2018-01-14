@@ -1,7 +1,7 @@
-<h2 class="task">
+<h4 class="task">
     0. Hello World
       
-  </h2>
+  </h4>
 
 
   
@@ -31,10 +31,10 @@ julien@ubuntu:/tmp/h$
 
 
   
-<h2 class="task">
+<h4 class="task">
     1. Confused smiley
       
-  </h2>
+  </h4>
 
 
   
@@ -62,10 +62,10 @@ julien@ubuntu:/tmp/h$
 
 
   
-<h2 class="task">
+<h4 class="task">
     2. Let's display a file
       
-  </h2>
+  </h4>
 
 
   
@@ -118,10 +118,10 @@ $
 
 
   
-<h2 class="task">
+<h4 class="task">
     3. What about 2?
       
-  </h2>
+  </h4>
 
 
   
@@ -173,10 +173,10 @@ $
 
 
   
-<h2 class="task">
+<h4 class="task">
     4. Last lines of a file
       
-  </h2>
+  </h4>
 
 
   
@@ -219,10 +219,10 @@ _krbfast:*:246:-2:Kerberos FAST Account:/var/empty:/usr/bin/false
 
 
   
-<h2 class="task">
+<h4 class="task">
     5. I'd prefer the first ones actually
       
-  </h2>
+  </h4>
 
 
   
@@ -262,10 +262,10 @@ $
 
 
   
-<h2 class="task">
+<h4 class="task">
     6. Line #2
       
-  </h2>
+  </h4>
 
 
   
@@ -320,10 +320,10 @@ julien@ubuntu:/tmp/h$
 
 
   
-<h2 class="task">
+<h4 class="task">
     7. Save current state of directory
       
-  </h2>
+  </h4>
 
 
   
@@ -373,10 +373,10 @@ julien@ubuntu:/tmp/h$
 
 
   
-<h2 class="task">
+<h4 class="task">
     8. It is a good file that cuts iron without making a noise
       
-  </h2>
+  </h4>
 
 
   
@@ -411,10 +411,10 @@ julien@production-503e7013:~/shell$
 
 
   
-<h2 class="task">
+<h4 class="task">
     9. Duplicate last line
       
-  </h2>
+  </h4>
 
 
   
@@ -477,10 +477,10 @@ julien@ubuntu:/tmp/h$
 
 
   
-<h2 class="task">
+<h4 class="task">
     10. No more javascript
       
-  </h2>
+  </h4>
 
 
   
@@ -539,10 +539,10 @@ julien@ubuntu:/tmp/h$
 
 
   
-<h2 class="task">
+<h4 class="task">
     11. Don't just count your directories, make your directories count
       
-  </h2>
+  </h4>
 
 
   
@@ -614,10 +614,10 @@ julien@production-503e7013:~/shell/fun_with_the_shell$
 
 
   
-<h2 class="task">
+<h4 class="task">
     12. What&#8217;s new
       
-  </h2>
+  </h4>
 
 
   
@@ -679,10 +679,10 @@ alex@ubuntu:/tmp$
 
 
   
-<h2 class="task">
+<h4 class="task">
     13. Being unique is better than being perfect
       
-  </h2>
+  </h4>
 
 
   
@@ -746,10 +746,10 @@ julien@ubuntu:/tmp/0x02$
 
 
   
-<h2 class="task">
+<h4 class="task">
     14. It must be in that file
       
-  </h2>
+  </h4>
 
 
   
@@ -779,10 +779,10 @@ $
 
 
   
-<h2 class="task">
+<h4 class="task">
     15. Count that word
       
-  </h2>
+  </h4>
 
 
   
@@ -810,10 +810,10 @@ $
 
 
   
-<h2 class="task">
+<h4 class="task">
     16. What's next?
       
-  </h2>
+  </h4>
 
 
   
@@ -850,10 +850,10 @@ $
 
 
   
-<h2 class="task">
+<h4 class="task">
     17. I hate bins
       
-  </h2>
+  </h4>
 
 
   
@@ -890,10 +890,10 @@ $
 
 
   
-<h2 class="task">
+<h4 class="task">
     18. Letters only please
       
-  </h2>
+  </h4>
 
 
   
@@ -930,10 +930,10 @@ $
 
 
   
-<h2 class="task">
+<h4 class="task">
     19. A to Z
       
-  </h2>
+  </h4>
 
 
   
@@ -961,10 +961,10 @@ julien@ubuntu:/tmp/0x02$
 
 
   
-<h2 class="task">
+<h4 class="task">
     20. Without C, you would live in hiago
       
-  </h2>
+  </h4>
 
 
   
@@ -992,10 +992,10 @@ julien@ubuntu:/tmp/0x02$
 
 
   
-<h2 class="task">
+<h4 class="task">
     21. esreveR
       
-  </h2>
+  </h4>
 
 
   
@@ -1023,10 +1023,10 @@ julien@ubuntu:/tmp/0x02$
 
 
   
-<h2 class="task">
+<h4 class="task">
     22. DJ Cut Killer
       
-  </h2>
+  </h4>
 
 
   
@@ -1144,10 +1144,10 @@ julien@ubuntu:/tmp/0x02$
 
 
   
-<h2 class="task">
+<h4 class="task">
     23. Empty casks make the most noise
       
-  </h2>
+  </h4>
 
 
   
@@ -1257,10 +1257,10 @@ ubuntu@ip-172-31-63-244:~/holbertonschool$
 
 
   
-<h2 class="task">
+<h4 class="task">
     24. A gif is worth ten thousand words
       
-  </h2>
+  </h4>
 
 
   
@@ -1339,10 +1339,10 @@ ubuntu@ip-172-31-63-244:~/holbertonschool$
 
 
   
-<h2 class="task">
+<h4 class="task">
     25. Acrostic
       
-  </h2>
+  </h4>
 
 
   
@@ -1390,10 +1390,10 @@ julien@ubuntu:/tmp/0x02$
 
 
   
-<h2 class="task">
+<h4 class="task">
     26. The biggest fan
       
-  </h2>
+  </h4>
 
 
   
