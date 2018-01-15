@@ -9,7 +9,7 @@ Make sure you have [pip](https://www.liquidweb.com/kb/how-to-install-pip-on-ubun
 Finally, run `pip install -r requirements.txt` in your shell to get all the required python packages
 
 ## Usage
-Create the environment variables `HOLB_USERNAME` and `HOLB_PASS` to refer to your holberton intranet username and password respectively. If you plan to use this script repeatedly, it's a good idea to put these definitions in you .bashrc:
+Create the environment variables `HOLB_USERNAME` and `HOLB_PASS` to refer to your holberton intranet username and password respectively. If you plan to use this script repeatedly, it's a good idea to put these definitions in your .bashrc:
 
 ```
 export HOLB_USERNAME='username'
