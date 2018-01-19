@@ -23,11 +23,12 @@ page = s.get(request_url)       # now that we're logged in, get the url we reall
 page_html = lxml.html.fromstring(page.text) # turn it into lxml html
 
 # get all the relevant values from the descriptions
-desc =  page_html.xpath(r'//div[@class=" clearfix gap"]/h4[@class="task"]|//div[@class=" clearfix gap"]/p|//div[@class=" clearfix gap"]/pre|//div[@class=" clearfix gap"]/ul') 
+#desc =  page_html.xpath(r'//div[@class=" clearfix gap"]/h4[@class="task"]|//div[@class=" clearfix gap"]/p|//div[@class=" clearfix gap"]/pre|//div[@class=" clearfix gap"]/ul')
+desc =  page_html.xpath(r'//div[@class=" clearfix gap"]/h4[@class="task"]')
 
 readme_html_ = open('README.html_', 'w') # create temporary html file
-from lxml.html.clean import Cleaner 
-cleaner = Cleaner(kill_tags=['span']) 
+from lxml.html.clean import Cleaner
+cleaner = Cleaner(kill_tags=['span'])
 for elem in desc:
     elem = cleaner.clean_html(elem) # kills <span> mandatory </span> or <span> advanced <span>
     readme_html_.write(lxml.html.tostring(elem, pretty_print=True)) # write to file
