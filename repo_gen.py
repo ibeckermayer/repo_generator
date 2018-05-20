@@ -22,6 +22,24 @@ response = s.post(login_url, data=form)  # login to holberton intranet
 page = s.get(request_url)  # now that we're logged in, get the url we really want
 root = lxml.html.fromstring(page.text)  # turn it into lxml html
 
+# create README.md file
+    result = s.get(webpage)
+    tree = html.fromstring(result.content)
+    for elem in tree.xpath('//div[contains(@class, "clearfix gap")]/p[1]/code'):
+        elem.drop_tag()
+    project_title = tree.xpath('//h1/text()')[0]
+    task_names = list(map(lambda x: x.strip(), tree.xpath('//h4[@class="task"]/text()')))
+    task_names = [x  for x in task_names if x is not '']
+    task_descriptions = tree.xpath('//div[contains(@class, "clearfix gap")]/p[1]/text()')
+    task_constraints = tree.xpath('//div[contains(@class, "clearfix gap")]/ul[1]//text()')
+
+    with open('README.md', 'w') as f:
+        f.write("# " + project_title + '\n')
+        for elem in zip(task_names, task_descriptions):
+            f.write('## ' + elem[0] + '\n')
+            f.write('***\n')
+            f.write(elem[1] + '\n\n')
+
 # find and make the directory:
 directory = root.xpath("//ul/li[contains(., 'Directory:')]/code")[0].text.strip()
 try:
