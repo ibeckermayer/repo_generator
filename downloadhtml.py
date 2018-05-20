@@ -17,5 +17,5 @@ form['user[password]'] = os.environ['HOLB_PASS']  # password (make sure env vari
 response = s.post(login_url, data=form)  # login to holberton intranet
 
 page = s.get(request_url)  # now that we're logged in, get the url we really want
-with open("page.html", 'w') as f:
+with open("example_intranet_page.html", 'w') as f:
     f.write(page.text)
