@@ -42,7 +42,7 @@ for snippet in code_snippets:
     rgu.snippet_handle(snippet.text)
 
 # make all the main files executable
-for f in glob.glob("*main*"):
+for f in glob.glob("*main.py"):
     os.chmod(f, 0o764)
 
 rgu.generate_readme(sys.argv[1])
