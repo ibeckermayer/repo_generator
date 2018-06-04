@@ -46,7 +46,7 @@ def snippet_handle(s):
                     except FileExistsError:
                         pass
                     while l < len(lines):  # continue down line by line
-                        if '@' not in lines[l] and '$' not in lines[l]:
+                        if not('@' in lines[l] and '$' in lines[l]):
                             with open(filename, 'a') as f:
                                 f.write(lines[l] + '\n')
                             l+=1
