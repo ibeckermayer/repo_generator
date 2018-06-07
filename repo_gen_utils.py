@@ -13,9 +13,17 @@ def file_handle(f):
         dirs_and_file = re.split(r'[/]', fi)
 
         # make any necessary directories
-        for directory in dirs_and_file[:-1]:
+        for i in range(len(dirs_and_file[:-1])):
             try:
-                os.mkdir(directory.strip())
+                if i == 0:
+                    directory = dirs_and_file[i]
+                    os.mkdir(directory.strip())
+                else:
+                    directory = ""
+                    for j in range(i):
+                        directory = directory + dirs_and_file[j] + '/'
+                    directory = directory + dirs_and_file[i]
+                    os.mkdir(directory.strip())
             except FileExistsError:
                 pass
 
