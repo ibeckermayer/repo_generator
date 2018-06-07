@@ -10,6 +10,7 @@ First set up a new environment and install the requirements:
 mkvirtualenv repo_generator
 pip install -r requirements.txt
 ```
+if you choose not to use `virtualenv` and `virtualenvwrapper` then just run the `pip install` line above.
 ### Environment Variables
 The best way I've found so far to avoid typing your intranet username and password each time the program runs is to set environment variables with your Holberton username and password. 
 If anybody has suggestions for a better way to do this feel free to suggest it to me.
@@ -27,6 +28,11 @@ Feel free to mess with this, and let me know if there's a better protocol for cr
 #!/bin/bash
 source /usr/local/bin/virtualenvwrapper.sh
 workon repo_generator
+python ~/repo_generator/repo_gen.py $1
+```
+If you choose not to use `virtualenv` and `virtualenvwrapper` then the equivalent script is simply
+```
+#!/bin/bash
 python ~/repo_generator/repo_gen.py $1
 ```
 ## Use
