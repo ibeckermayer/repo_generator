@@ -31,7 +31,8 @@ except IndexError as e:
 try:
     os.mkdir(directory)
 except FileExistsError as e:
-    print("[WARNING]: Directory already exists")
+    print("[WARNING]: Directory already exists. Aborting program to avoid accidentally overwriting your work.")
+    sys.exit()
 
 # change to directory
 os.chdir(directory)
