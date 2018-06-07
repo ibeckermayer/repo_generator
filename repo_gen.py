@@ -22,7 +22,12 @@ page = s.get(request_url)  # now that we're logged in, get the url we really wan
 root = lxml.html.fromstring(page.text)  # turn it into lxml html
 
 # find and make the directory:
-directory = root.xpath("//ul/li[contains(., 'Directory:')]/code")[0].text.strip()
+try:
+    directory = root.xpath("//ul/li[contains(., 'Directory:')]/code")[0].text.strip()
+except IndexError as e:
+    # takes care of when it is a longterm project with just a Github repository field
+    directory = root.xpath("//ul/li[contains(., 'GitHub repository:')]/code")[0].text.strip()
+
 try:
     os.mkdir(directory)
 except FileExistsError as e:
