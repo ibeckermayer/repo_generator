@@ -46,21 +46,24 @@ def snippet_handle(s):
                 i+=1
                 l+=1
                 if i < len(words):
-                    while words[i][0] == "-":  # skip options
+                    while i < len(words) and words[i][0] == "-":  # skip options
                         i+=1
-                    filename = words[i]
-                    try:            # make the file
-                        os.mknod(filename.strip())
-                    except FileExistsError:
-                        pass
-                    while l < len(lines):  # continue down line by line
-                        if not('@' in lines[l] and '$' in lines[l]):
-                            with open(filename, 'a') as f:
-                                f.write(lines[l] + '\n')
-                            l+=1
-                        else:
-                            break
-                    break
+                    filename = ""
+                    if i < len(words):
+                        filename = words[i]
+                    if filename:
+                        try:            # make the file
+                            os.mknod(filename.strip())
+                        except FileExistsError:
+                            pass
+                        while l < len(lines):  # continue down line by line
+                            if not('@' in lines[l] and '$' in lines[l]):
+                                with open(filename, 'a') as f:
+                                    f.write(lines[l] + '\n')
+                                l+=1
+                            else:
+                                break
+                        break
             else:
                 i+=1
         l+=1
